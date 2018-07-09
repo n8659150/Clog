@@ -2,16 +2,25 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>主页</h2>
+    <el-button @click="open">默认按钮</el-button>
     
   </div>
 </template>
 
 <script>
+import request from '@/helpers/request'
+// for easy testing
+window.request = request;
 export default {
   // name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods:{
+    open(){
+      this.$message('这是一条消息提示');
     }
   }
 }
